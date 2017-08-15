@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="presenter"
+            type="com.codeprinciples.advancedadapterexample.presenters.ListItemsPresenter"/>
+    </data>
+<TextView
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:padding="5dp"
+    android:text="LOAD MORE"
+    android:gravity="center"
+    android:background="#efefef"
+    android:foreground="?selectableItemBackground"
+    android:onClick="@{(v) -> presenter.onLoadMoreClick()}"/>
+</layout>

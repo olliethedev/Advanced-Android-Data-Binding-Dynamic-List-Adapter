@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="headingModel"
+            type="com.codeprinciples.advancedadapterexample.models.HeadingModel"/>
+    </data>
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="24sp"
+    android:textStyle="bold"
+    android:drawableLeft="@drawable/ic_toys"
+    android:drawablePadding="5dp"
+    android:text="@{headingModel.heading}"
+    android:gravity="center_vertical"
+    tools:text="Heading Text"/>
+</layout>

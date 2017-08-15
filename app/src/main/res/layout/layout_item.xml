@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="itemModel"
+            type="com.codeprinciples.advancedadapterexample.models.ItemModel"/>
+        <variable
+            name="itemPresenter"
+            type="com.codeprinciples.advancedadapterexample.presenters.ListItemsPresenter"/>
+    </data>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{(v) -> itemPresenter.onClick(itemModel)}">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:textStyle="normal"
+            android:text="@{itemModel.item}"
+            android:gravity="center_vertical"
+            android:drawableLeft="@drawable/ic_more_vert"
+            android:foreground="?selectableItemBackground"
+            tools:text="Item Text"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_delete"
+            android:layout_marginRight="15dp"
+            android:layout_gravity="right"
+            android:foreground="?selectableItemBackground"
+            android:onClick="@{(v) -> itemPresenter.onDeleteClick(itemModel)}"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_drop_down"
+            android:layout_marginRight="15dp"
+            android:layout_gravity="right"
+            android:foreground="?selectableItemBackground"
+            android:onClick="@{(v) -> itemPresenter.onExpandClick(itemModel)}"/>
+
+    </LinearLayout>
+</layout>
